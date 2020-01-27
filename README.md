@@ -1,1 +1,4 @@
-# seleny
+# Seleny
+
+Automation project with Selenide.
+
