@@ -1,4 +1,4 @@
 # Seleny
 
-Automation project with Selenide.
+Automation project with Selenium.
 
