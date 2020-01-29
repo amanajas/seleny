@@ -1,51 +1,41 @@
 package resources;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+import static java.time.Duration.ofSeconds;
 
 public class Page {
 
+    public static final Duration TIMEOUT = ofSeconds(10);
     private WebDriver driver;
-    private String browser;
 
-    public Page() {
-        driver = null;
+    public Page(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public void openUrl(String url) {
-        this.driver = this.getDriver(null);
+    public boolean isElementPresent(By by) {
+        return driver.findElements(by).size() > 0;
     }
 
-    public void openUrl(String url, String browser) {
-        this.driver = this.getDriver(browser);
+    public WebElement getElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT.getSeconds());
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void openUrlChrome(String url) {
-        this.openUrl(url, "Chrome");
+    public WebElement getElement(By by) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT.getSeconds());
+        return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
-    public void openUrlFirefox(String url) {
-        this.openUrl(url, "Firefox");
-    }
-
-    public void openUrlSafari(String url) {
-        this.openUrl(url, "Safari");
-    }
-
-    public void openUrlIE(String url) {
-        this.openUrl(url, "IE");
-    }
-
-    public WebDriver getDriver(String browser) {
-        if (this.driver == null) {
-            this.driver = new Driver().getDriver(browser);
-        }
-        return driver;
-    }
-
-    public void quit() {
-        if (this.driver != null) {
-            this.driver.quit();
-        }
+    public WebElement getElement(String selector) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT.getSeconds());
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(selector)));
     }
 
 }

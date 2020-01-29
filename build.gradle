@@ -9,6 +9,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -20,13 +21,7 @@ dependencies {
 
 test {
     useTestNG() {
-        includeGroups 'smoke', 'sanity'
-        excludeGroups 'regression'
         useDefaultListeners = true
-    }
-
-    testLogging {
-        events "PASSED", "FAILED", "SKIPPED"
     }
 
     reports.html.enabled = false

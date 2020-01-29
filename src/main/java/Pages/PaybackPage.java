@@ -1,13 +1,18 @@
 package Pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import resources.Page;
 
 public class PaybackPage extends Page {
 
-    public static final String URL = "www.payback.de";
+    public PaybackPage(WebDriver driver) {
+        super(driver);
+    }
 
     public WebElement getLogo() {
-        return null;
+        String logo = "#logo > img";
+        return this.getElement(By.cssSelector(logo));
     }
 }

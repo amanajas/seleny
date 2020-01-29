@@ -1,23 +1,25 @@
 package resources;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Driver {
 
-    public WebDriver getDriver(String name) {
-        if (name.equalsIgnoreCase("Firefox")) {
-            return new FirefoxDriver();
+    public static WebDriver getDriver(TestConfig config) {
+        URL url = null;
+        try {
+            url = new URL(config.getHost());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-        else if (name.equalsIgnoreCase("Safari")) {
-            return new SafariDriver();
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        if (config.getBrowser().equalsIgnoreCase("Firefox")) {
+            capabilities = DesiredCapabilities.firefox();
         }
-        else if (name.equalsIgnoreCase("IE")) {
-            return new InternetExplorerDriver();
-        }
-        return new ChromeDriver();
+        return new RemoteWebDriver(url, capabilities);
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Functional" verbose="1" >
+    <parameter name="selenium.host" value="http://localhost:4444/wd/hub/" />
+    <parameter name="selenium.url" value="https://www.payback.de" />
+    <test name="HomePage">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="functional.PaybackTest" />
+        </classes>
+    </test>
+</suite>
