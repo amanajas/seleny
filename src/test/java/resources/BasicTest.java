@@ -8,11 +8,10 @@ public class BasicTest {
   protected WebDriver driver;
   protected TestConfig config;
 
-  @Parameters({"selenium.url", "selenium.host", "browser", "headless"})
+  @Parameters({"selenium.url", "selenium.host", "headless", "browser"})
   @BeforeTest(alwaysRun = true)
-  public void beforeTest(String url, String host,
-                          @Optional("browser") String browser,
-                          @Optional("headless") boolean headless) {
+  public void beforeTest(String url, String host, boolean headless,
+                          @Optional("browser") String browser) {
       config = new TestConfig(url, host);
       config.setBrowser(browser);
       driver = Driver.getDriver(config, headless);
