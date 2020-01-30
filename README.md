@@ -2,8 +2,17 @@
 
 Automation project with Selenium.
 
-## Run selenium server via docker
+## Install selenium standalone server via NPM
 
 ```
-docker run -it -p 4444:4444 vvoyer/selenium-standalone
+npm install selenium-standalone@latest -g
+
+selenium-standalone install
+```
+
+
+
+#### Run it
+```
+selenium-standalone start
 ```

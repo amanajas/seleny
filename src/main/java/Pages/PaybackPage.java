@@ -12,7 +12,6 @@ public class PaybackPage extends Page {
     }
 
     public WebElement getLogo() {
-        String logo = "#logo > img";
-        return this.getElement(By.cssSelector(logo));
+        return this.getElement(By.id("logo"));
     }
 }

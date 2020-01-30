@@ -8,7 +8,7 @@ public class TestConfig {
 	
 	public TestConfig(String url, String host) {
 		addressUrl = url;
-		testBrowser = null;
+		testBrowser = Driver.getPlatform(Driver.Platform.Chrome);
 		seleniumHost = host;
 	}
 	
@@ -23,6 +23,8 @@ public class TestConfig {
 	}
 
 	public void setBrowser(String browser) {
-		testBrowser = browser;
+		if (browser != null) {
+			testBrowser = browser;
+		}
 	}
 }

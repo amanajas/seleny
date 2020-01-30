@@ -8,18 +8,16 @@ public class BasicTest {
   protected WebDriver driver;
   protected TestConfig config;
 
-  @Parameters({"selenium.url", "selenium.host"})
-  @BeforeSuite(alwaysRun = true)
-  public void beforeSuite(String url, String host) {
+  @Parameters({"selenium.url", "selenium.host", "browser", "headless"})
+  @BeforeTest(alwaysRun = true)
+  public void beforeTest(String url, String host,
+                          @Optional("browser") String browser,
+                          @Optional("headless") boolean headless) {
       config = new TestConfig(url, host);
+      config.setBrowser(browser);
+      driver = Driver.getDriver(config, headless);
   }
 
-  @Parameters({"browser"})
-  @BeforeTest(alwaysRun = true)
-  public void beforeTest(String browser) {
-      config.setBrowser(browser);
-      driver = Driver.getDriver(config);
-  }
 
   @AfterTest(alwaysRun = true)
   public void afterTest() {
