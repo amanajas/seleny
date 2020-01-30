@@ -3,19 +3,19 @@ package resources;
 public class TestConfig {
 	
 	private String addressUrl;
-	private String testBrowser;
+	private Driver.Platform testBrowser;
 	private String seleniumHost;
 	
 	public TestConfig(String url, String host) {
 		addressUrl = url;
-		testBrowser = Driver.getPlatform(Driver.Platform.Chrome);
+		testBrowser = Driver.Platform.Chrome;
 		seleniumHost = host;
 	}
 	
 	public String getUrl() {
 		return addressUrl;
 	}
-	public String getBrowser() {
+	public Driver.Platform getBrowser() {
 		return testBrowser;
 	}
 	public String getHost() {
@@ -24,7 +24,7 @@ public class TestConfig {
 
 	public void setBrowser(String browser) {
 		if (browser != null) {
-			testBrowser = browser;
+			testBrowser = Driver.Platform.valueOf(browser);
 		}
 	}
 }
