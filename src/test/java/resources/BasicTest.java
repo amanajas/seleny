@@ -9,8 +9,8 @@ public class BasicTest {
   protected TestConfig config;
 
   @Parameters({"selenium.url", "selenium.host", "headless", "browser"})
-  @BeforeTest(alwaysRun = true)
-  public void beforeTest(String url, String host, boolean headless,
+  @BeforeClass(alwaysRun = true)
+  public void beforeClass(String url, String host, boolean headless,
                           @Optional("browser") String browser) {
       config = new TestConfig(url, host);
       config.setBrowser(browser);
@@ -19,8 +19,8 @@ public class BasicTest {
   }
 
 
-  @AfterTest(alwaysRun = true)
-  public void afterTest() {
+  @AfterClass(alwaysRun = true)
+  public void afterClass() {
 	  if (driver != null) {
           driver.quit();
       }

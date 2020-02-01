@@ -33,24 +33,25 @@ public class LoginPage extends Page {
         return this.getElement(driver, By.id("zipName"));
     }
 
+    public WebElement getPermLoginSecureCheckbox(WebDriver driver) {
+        return this.getElement(driver, By.id("permLoginSecure"));
+    }
+
+    public WebElement getPermLoginSecureLabel(WebDriver driver) {
+        return this.getElement(driver, By.id("permLoginSecureLabel"));
+    }
+
     public WebElement getPINField(WebDriver driver) {
         return this.getElement(driver, By.id("pinInput"));
     }
+    
 
-    public void clickOnClassicLogin(WebDriver driver) {
-        this.getElement(driver, By.id("toggleClassicLogin")).click();
+    public WebElement getTabClassicLoginPIN(WebDriver driver) {
+        return this.getElement(driver, By.id("tabclassicLoginPin"));
     }
 
-    public void clickOnClassicLoginPIN(WebDriver driver) {
-        this.getElement(driver, By.id("tabclassicLoginPin")).click();
-    }
-
-    public void clickOnClassicLoginDob(WebDriver driver) {
-        this.getElement(driver, By.id("tabclassicLoginDobZip")).click();
-    }
-
-    public void clickOnSecureLogin(WebDriver driver) {
-        this.getElement(driver, By.id("toggleSecureLogin")).click();
+    public WebElement getToggleToSecureLogin(WebDriver driver) {
+        return this.getElement(driver, By.id("toggleSecureLogin"));
     }
 
     public boolean isForgetPasswordLinkVisible(WebDriver driver) {
@@ -61,5 +62,7 @@ public class LoginPage extends Page {
         return this.isElementPresent(driver, By.cssSelector("#secureOrClassicLoginPane > form > div:nth-child(4) > div > div"));
     }
 
-
+    public WebElement getCardNumberClassicPin(WebDriver driver) {
+        return this.getElement(driver, By.id("cardnumberInputClassicPin"));
+    }
 }

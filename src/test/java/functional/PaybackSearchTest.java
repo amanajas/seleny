@@ -14,6 +14,11 @@ public class PaybackSearchTest extends BasicTest {
         page = new PaybackPage();
     }
 
+    @Test(groups = {"regression"}, testName = "Search is present", description = "Check if there is a search button")
+    public void has_Search_Button() {
+
+    }
+
     @Test(groups = {"regression"}, testName = "Valid search", description = "Check if it is possible to search")
     public void valid_Search() {
 

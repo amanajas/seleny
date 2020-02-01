@@ -20,6 +20,7 @@ public class PaybackTest extends BasicTest {
         Assert.assertNotNull(logo);
         String url = this.driver.getCurrentUrl();
         logo.click();
+        page.waitForPageToLoad(this.driver);
         WebElement logo2 = page.getLogo(this.driver);
         Assert.assertNotNull(logo2);
         Assert.assertEquals(url, this.driver.getCurrentUrl());
