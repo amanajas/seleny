@@ -10,16 +10,15 @@ public class PaybackPage extends Page {
 
     private Search search;
 
-    public PaybackPage(WebDriver driver) {
-        super(driver);
+    public PaybackPage() {
         this.search = new Search();
     }
 
-    public WebElement getLogo() {
-        return this.getElement(By.id("logo"));
+    public WebElement getLogo(WebDriver driver) {
+        return this.getElement(driver, By.id("logo"));
     }
 
-    public WebElement getSearch() {
-        return this.search.get(this);
+    public WebElement getSearch(WebDriver driver) {
+        return this.search.get(this, driver);
     }
 }

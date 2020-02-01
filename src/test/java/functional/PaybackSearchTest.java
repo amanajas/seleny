@@ -2,19 +2,16 @@ package functional;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.PaybackPage;
 import resources.BasicTest;
 
 public class PaybackSearchTest extends BasicTest {
 
-    private PaybackPage page;
+    protected PaybackPage page;
 
-    @BeforeClass
-    public void beforeClass() {
-        page = new PaybackPage(driver);
-        driver.get(config.getUrl());
+    public PaybackSearchTest() {
+        page = new PaybackPage();
     }
 
     @Test(groups = {"regression"}, testName = "Valid search", description = "Check if it is possible to search")

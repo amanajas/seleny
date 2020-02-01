@@ -7,15 +7,14 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.PaybackPage;
 import resources.BasicTest;
+import resources.Page;
 
 public class LoginFormTest extends BasicTest {
 
-    private LoginPage page;
+    protected LoginPage page;
 
-    @BeforeClass
-    public void beforeClass() {
-        page = new LoginPage(driver);
-        driver.get(config.getUrl() + LoginPage.URL);
+    public LoginFormTest() {
+        page = new LoginPage();
     }
 
     @Test(groups = {"regression"}, testName = "Form fields", description = "Check if the form has all the fields")

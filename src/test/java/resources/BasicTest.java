@@ -15,6 +15,7 @@ public class BasicTest {
       config = new TestConfig(url, host);
       config.setBrowser(browser);
       driver = Driver.getDriver(config, headless);
+      driver.get(url);
   }
 
 
