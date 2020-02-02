@@ -3,18 +3,13 @@
 <suite parallel="tests" name="Functional" verbose="1" >
     <parameter name="selenium.host" value="http://localhost:4444/wd/hub/" />
     <parameter name="selenium.url" value="https://www.payback.de" />
-    <parameter name="headless" value="true" />
-    <test name="HomePage Chrome">
-        <parameter name="browser" value="Chrome"/>
-        <classes>
-            <class name="functional.PaybackTest" />
-        </classes>
-    </test>
-
+    <parameter name="headless" value="false" />
     <test name="HomePage Firefox">
         <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="functional.PaybackTest" />
+            <class name="functional.LoginFormTest" />
+            <class name="functional.PaybackSearchTest" />
         </classes>
     </test>
 </suite>
