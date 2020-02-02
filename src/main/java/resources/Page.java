@@ -17,11 +17,11 @@ public class Page {
 
     public static final Duration TIMEOUT = ofSeconds(10);
 
-    public boolean isElementPresent(WebDriver driver, By by) {
+    public boolean elementIsPresent(WebDriver driver, By by) {
         return driver.findElements(by).size() > 0;
     }
 
-    public boolean isElementPresent(WebElement element) {
+    public boolean elementIsPresent(WebElement element) {
         return element.getSize().width > 0;
     }
 
@@ -47,4 +47,8 @@ public class Page {
         return wait.until(pageLoad);
     }
 
+    public boolean waitUntilAttributeContains(WebDriver driver, WebElement search, String attr, String value) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT.getSeconds());
+        return wait.until(ExpectedConditions.attributeContains(search, attr, value));
+    }
 }

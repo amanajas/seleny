@@ -55,11 +55,11 @@ public class LoginPage extends Page {
     }
 
     public boolean isForgetPasswordLinkVisible(WebDriver driver) {
-        return this.isElementPresent(driver, By.id("forgotPassword"));
+        return this.elementIsPresent(driver, By.id("forgotPassword"));
     }
 
     public boolean isWarnMessageVisible(WebDriver driver) {
-        return this.isElementPresent(driver, By.cssSelector("#secureOrClassicLoginPane > form > div:nth-child(4) > div > div"));
+        return this.elementIsPresent(driver, By.cssSelector("#secureOrClassicLoginPane > form > div:nth-child(4) > div > div"));
     }
 
     public WebElement getCardNumberClassicPin(WebDriver driver) {

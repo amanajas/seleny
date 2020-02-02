@@ -18,7 +18,7 @@ public class PaybackPage extends Page {
         return this.getElement(driver, By.id("logo"));
     }
 
-    public WebElement getSearch(WebDriver driver) {
-        return this.search.get(this, driver);
+    public Search getSearch() {
+        return this.search;
     }
 }

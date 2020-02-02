@@ -7,8 +7,8 @@
     <test name="HomePage Firefox">
         <parameter name="browser" value="Firefox"/>
         <classes>
-<!--            <class name="functional.PaybackTest" />-->
-<!--            <class name="functional.LoginFormTest" />-->
+            <class name="functional.PaybackTest" />
+            <class name="functional.LoginFormTest" />
             <class name="functional.PaybackSearchTest" />
         </classes>
     </test>
