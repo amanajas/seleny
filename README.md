@@ -25,7 +25,6 @@ selenium-standalone start
 ## Cases
 
 - The logo appears and redirects to homepage.
-- (Bug?) Executing an invalid search causes 404.
 - Executing an invalid search displays other options.
 - Executing a valid search and displaying results.
 - There is a search button.
