@@ -3,7 +3,7 @@
 <suite parallel="tests" name="Functional" verbose="1" >
     <parameter name="selenium.host" value="http://localhost:4444/wd/hub/" />
     <parameter name="selenium.url" value="https://www.payback.de" />
-    <parameter name="headless" value="false" />
+    <parameter name="headless" value="true" />
     <test name="HomePage Firefox">
         <parameter name="browser" value="Firefox"/>
         <classes>
