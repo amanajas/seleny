@@ -35,4 +35,4 @@ selenium-standalone start
 ## Found bugs
 
 - (?)Executing an invalid search causes 404.
-- Search close button has a broken image.
+- (FIXED) Search close button has a broken image.
