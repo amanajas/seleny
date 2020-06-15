@@ -31,8 +31,3 @@ selenium-standalone start
 - Cannot login with empty fields.
 - The form has all the fields and buttons for the secure login.
 - The form has all the fields and buttons for the normal login.
-
-## Found bugs
-
-- (?)Executing an invalid search causes 404.
-- (FIXED) Search close button has a broken image.
